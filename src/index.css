@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+@theme {
+  --color-rbx-bg: #08090C;
+  --color-rbx-card: #101218;
+  --color-rbx-card-hover: #161922;
+  --color-rbx-border: #232734;
+  --color-rbx-border-red: rgba(239, 68, 68, 0.35);
+
+  --color-rbx-red: #FF2A3A;
+  --color-rbx-red-hover: #E50914;
+  --color-rbx-red-dark: #99000B;
+  --color-rbx-red-light: #FF5C69;
+  --color-rbx-red-glow: rgba(255, 42, 58, 0.45);
+
+  --color-rbx-dark-900: #07080A;
+  --color-rbx-dark-800: #0E1015;
+  --color-rbx-dark-700: #151821;
+  --color-rbx-dark-600: #1E222E;
+  --color-rbx-dark-500: #2C3243;
+  --color-rbx-dark-400: #4E576F;
+  --color-rbx-dark-300: #8792AE;
+  --color-rbx-dark-200: #C2C9DB;
+  --color-rbx-dark-100: #EDF1FA;
+
+  --font-sans: "Outfit", system-ui, -apple-system, sans-serif;
+  --font-display: "Space Grotesk", "Outfit", sans-serif;
+
+  --shadow-glow-red: 0 0 25px -5px rgba(255, 42, 58, 0.45);
+  --shadow-glow-red-lg: 0 0 45px -5px rgba(255, 42, 58, 0.55);
+  --shadow-glow-subtle: 0 0 15px -3px rgba(255, 42, 58, 0.25);
+  --shadow-card-dark: 0 10px 30px -10px rgba(0, 0, 0, 0.8);
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #08090C;
+  color: #EDF1FA;
+  overflow-x: hidden;
+  font-family: var(--font-sans);
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0E1015;
+}
+::-webkit-scrollbar-thumb {
+  background: #232734;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #FF2A3A;
+}
+
+/* Custom Esports Utilities */
+.text-glow {
+  text-shadow: 0 0 20px rgba(255, 42, 58, 0.5);
+}
+
+.glass-panel {
+  background: rgba(16, 18, 24, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-panel-hover:hover {
+  background: rgba(22, 25, 34, 0.9);
+  border-color: rgba(255, 42, 58, 0.35);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.7), 0 0 20px -5px rgba(255, 42, 58, 0.25);
+}
+
+.glass-panel-red {
+  background: linear-gradient(135deg, rgba(255, 42, 58, 0.12) 0%, rgba(16, 18, 24, 0.8) 100%);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 42, 58, 0.3);
+}
+
+.bg-radial-hero {
+  background: radial-gradient(circle at 50% 20%, rgba(255, 42, 58, 0.15) 0%, rgba(8, 9, 12, 0.95) 75%, #08090C 100%);
+}
+
+.bg-grid-pattern {
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-float {
+  animation: float 5s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
